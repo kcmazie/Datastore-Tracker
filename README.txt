@@ -9,7 +9,8 @@
                     : so they must be cleared out manually as of this version.
                     : 
               Notes : Normal operation is with no command line options.  
-                    : Optional arguments: -Debug $true (defaults to false.  Sends emails to debug user) 
+                    : Optional arguments: (entered below)
+                    :                     -Debug $true (defaults to false.  Sends emails to debug user) 
                     :                     -NoUpdate $true (runs with current files and doesnt replace them for debugging)
                     :                     -Console $true (displays runtime info on console)
                     : 
@@ -19,8 +20,7 @@
                     : SCRIPT PROVIDED "AS IS" WITHOUT WARRANTIES OR GUARANTEES OF 
                     : ANY KIND. USE AT YOUR OWN RISK. NO TECHNICAL SUPPORT PROVIDED.
                     :
-            Credits : Code snippets and/or ideas came from many sources including but 
-                    :   not limited to the following:
+            Credits : Code snippets and/or ideas came from many sources including but not limited to the following:
                     : Based on "Track Datastore Space script" Created by Hugo Peeters of www.peetersonline.nl    
                     : 
      Last Update by : Kenneth C. Mazie 
@@ -37,6 +37,12 @@
                     :                    Added error log and global catch.  Changed required PS version to 5.
                     : v5.10 - 04-18-24 - Added totals to report.  Fixed bug importing previous days data.
                     : v5.20 - 07-23-24 - Replaced missing statusmsg function.
-                    #>$ScriptVer = "v5.20"<#
+                    : v5.30 - 04-24-25 - Altered editor mode to force noupdate so as to not overwrite diff during testing.
+                    : v6.00 - 06-24-25 - Added console mode for testing without email and to show runtime info.  Added file 
+                    :                    dates to report and diff file.  Added error log to track errors during runs.  Added 
+                    :                    global catch for scheduled task runs.  Added more status messages throughout script.
+                    :                    Retooled file management to create date stamped backup files.  Added archiving
+					:                    routine to keep files from filling up the script folder.
+                    #>$ScriptVer = "v6.00"<#
                     :
 #===============================================================================#>
