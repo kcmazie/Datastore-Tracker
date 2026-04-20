@@ -14,7 +14,7 @@
                     :                     -NoUpdate $true (runs with current files and doesnt replace them for debugging)
                     :                     -Console $true (displays runtime info on console)
                     : 
-           Warnings : None.  Read only, no edits.
+           Warnings : None.  
                     :   
               Legal : Public Domain. Modify and redistribute freely. No rights reserved.
                     : SCRIPT PROVIDED "AS IS" WITHOUT WARRANTIES OR GUARANTEES OF 
