@@ -1,3 +1,4 @@
+
 <#==============================================================================
           File Name : Datastore-Tracker.ps1
     Original Author : Kenneth C. Mazie (kcmjr AT kcmjr.com)
@@ -5,8 +6,9 @@
         Description : Tracks SAN datastores over time.  Emails a daily report on changes.
                     : Has 2 options for credentials, prompt user, or load from encrypted file.
                     : Encrypted file can be in script folder or remote.  Diff files are stored
-                    : in script folder for reference.  There is no upper limit to these files
-                    : so they must be cleared out manually as of this version.
+                    : in script folder for reference.  Stored diff file dates are checked each 
+                    : run and if month date matches this month nothing is done.  If month
+					: matches previous month all diff files are zipped for archiving.
                     : 
               Notes : Normal operation is with no command line options.  
                     : Optional arguments: (entered below)
@@ -14,7 +16,7 @@
                     :                     -NoUpdate $true (runs with current files and doesnt replace them for debugging)
                     :                     -Console $true (displays runtime info on console)
                     : 
-           Warnings : None.  
+           Warnings : None.  Read only, no edits.
                     :   
               Legal : Public Domain. Modify and redistribute freely. No rights reserved.
                     : SCRIPT PROVIDED "AS IS" WITHOUT WARRANTIES OR GUARANTEES OF 
@@ -43,6 +45,7 @@
                     :                    global catch for scheduled task runs.  Added more status messages throughout script.
                     :                    Retooled file management to create date stamped backup files.  Added archiving
 					:                    routine to keep files from filling up the script folder.
-                    #>$ScriptVer = "v6.00"<#
+					: v6.10 - 04-22-26 - Added check to verify previous XML file is being deleted.
+                    #>$ScriptVer = "v6.10"<#
                     :
 #===============================================================================#>
