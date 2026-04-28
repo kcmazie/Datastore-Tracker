@@ -45,7 +45,9 @@
                     :                    global catch for scheduled task runs.  Added more status messages throughout script.
                     :                    Retooled file management to create date stamped backup files.  Added archiving
 					:                    routine to keep files from filling up the script folder.
-					: v6.10 - 04-22-26 - Added check to verify previous XML file is being deleted.
-                    #>$ScriptVer = "v6.10"<#
+					: v6.20 - 04-27-26 - Removed "noupdate" from XML file to stop false triggering.
+					: v6.30 - 04-28-26 - Reworked file management routines to fix previous file delete bug.  Added error 
+					:                    trapping routine.
+                    #>$ScriptVer = "v6.30"<#
                     :
 #===============================================================================#>
